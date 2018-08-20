@@ -1,5 +1,5 @@
 from numpy import unique, bincount, shape, min, max, sum, array, uint32, where, uint8, round
-import nrrd, sys, os, 
+import nrrd, sys, os
 from matplotlib.pyplot import imshow, show, figure
 
 def convertswc2nrrd(input,output,template=""):
