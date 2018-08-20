@@ -20,15 +20,15 @@ def convertswc2nrrd(input,output,template=""):
         maxX, maxY, maxZ = size(data1)
     else:
         if np.max([x['position'][0] for x in lineDict.values()]) > maxX:
-            maxX = np.max([x['position'][0] for x in lineDict.values()])
+            maxX = np.int64(np.max([x['position'][0] for x in lineDict.values()]))
         if np.max([y['position'][1] for y in lineDict.values()]) > maxY:
-            maxY = np.max([y['position'][1] for y in lineDict.values()])
+            maxY = np.int64(np.max([y['position'][1] for y in lineDict.values()]))
         if np.max([z['position'][2] for z in lineDict.values()]) > maxZ:
-            maxZ = np.max([z['position'][2] for z in lineDict.values()])
+            maxZ = np.int64(np.max([z['position'][2] for z in lineDict.values()]))
     print maxX
     print maxY
     print maxZ    
-    outputImg = np.zeros((int(maxX),int(maxY),int(maxZ)),dtype=np.uint8)
+    outputImg = np.zeros((maxX,maxY,maxZ),dtype=np.uint8)
     from drawTube import doCrossCircC,doAddSphereC
     for thisDict in lineDict.values():
         if thisDict['parent'] != -1:
