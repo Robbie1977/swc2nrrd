@@ -43,5 +43,5 @@ else:
     fileName, fileExtension = os.path.splitext(sys.argv[1])
     if fileExtension=='.swc':
         convertswc2nrrd(sys.argv[1],str(sys.argv[1]).replace('.swc','.nrrd'))
-    elseif fileExtension=='.nrrd':
+    elif fileExtension=='.nrrd':
         convertswc2nrrd(str(sys.argv[1]).replace('.nrrd','.swc'),sys.argv[1])  
