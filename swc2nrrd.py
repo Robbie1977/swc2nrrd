@@ -25,7 +25,9 @@ def convertswc2nrrd(input,output,template=""):
             maxY = np.max([y['position'][1] for y in lineDict.values()])
         if np.max([z['position'][2] for z in lineDict.values()]) > maxZ:
             maxZ = np.max([z['position'][2] for z in lineDict.values()])
-        
+    print maxX
+    print maxY
+    print maxZ    
     outputImg = np.zeros((int(maxX),int(maxY),int(maxZ)),dtype=np.uint8)
     from drawTube import doCrossCircC,doAddSphereC
     for thisDict in lineDict.values():
