@@ -12,9 +12,9 @@ def convertswc2nrrd(input,output,template=""):
             lineDict[int(splitLine[0])] = {'position':np.array([splitLine[2],splitLine[3],splitLine[4]],dtype=np.float),
                                   'radius':splitLine[5],
                                   'parent':int(splitLine[6])}
-    int maxX = 1000
-    int maxY = 1000
-    int maxZ = 1000
+    maxX = 1000
+    maxY = 1000
+    maxZ = 1000
     if ('.nrrd' in template):
         data1, header1 = nrrd.read(str(template))
         maxX, maxY, maxZ = size(data1)
